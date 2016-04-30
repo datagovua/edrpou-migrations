@@ -4,8 +4,8 @@ module.exports = {
 
   client: 'postgresql',
   connection: {
-    host: 'postgres',
-    database: 'sails',
+    host:     'postgres',
+    database: 'postgres',
     user:     'postgres',
   },
   pool: {
