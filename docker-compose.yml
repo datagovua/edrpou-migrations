@@ -1,0 +1,17 @@
+version: '2'
+services:
+  edr-migration:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: sh -c 'npm install && knex migrate:latest'
+    environment:
+      PATH: /data/node_modules/.bin:$PATH
+    volumes:
+      - ./:/data/
+      - /data/node_modules
+    depends_on:
+      - postgres
+  postgres:
+    image: kiasaki/alpine-postgres:9.5
+
