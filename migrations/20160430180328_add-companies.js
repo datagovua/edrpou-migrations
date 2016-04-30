@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
       table.timestamp("createdAt").defaultTo(knex.raw('now()')).notNullable();
       table.timestamp("updatedAt").defaultTo(knex.raw('now()')).notNullable();
       table.string("edrpou", 100);
-      table.string("status", 255);
+      table.string("status", 1024);
       table.string("officialName", 1024);
       table.string("name", 1024);
       table.string("mainPerson", 1024);
